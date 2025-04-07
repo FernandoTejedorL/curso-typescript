@@ -49,4 +49,46 @@ function print(t) {
     return t;
 }
 print({ id: 'userid', name: 'Fer' });
+class State {
+    constructor() {
+        this.data = [];
+    }
+    add(t) {
+        this.data.push(t);
+    }
+    getState() {
+        return this.data;
+    }
+}
+class deleteState extends State {
+    delete(id) {
+        this.data.filter((item) => item.id !== id);
+    }
+}
+class EstadoUsuarios extends State {
+    resetPass() {
+    }
+}
+const estadoUsuarios = new EstadoUsuarios();
+const calendar = { id: 1, source: 'Google', owner: 'myself' };
+function getProp(object, property) {
+    return object[property];
+}
+getProp(calendar, 'id');
+getProp(calendar, 'source');
+const keyVal = {
+    'soy un string': 42,
+};
+const dotOmit = {
+    x: 1,
+};
+const dotPick = {
+    x: 1,
+    y: 2,
+};
+const readOnlyDot = {
+    x: 1,
+    y: 3,
+    description: 'soy una descripción',
+};
 //# sourceMappingURL=generics.js.map
