@@ -159,3 +159,99 @@ console.log(accepted);
 const errorUser: () => never = () => {
   throw new Error('Error in the user');
 };
+
+// union type - ser lo más estricto, preferir un unico tipo
+
+let score: number | string = 98;
+
+score = 'hello world';
+
+type Animal = {
+  id: number;
+  status: string;
+};
+
+type User = {
+  id: number;
+  name: string;
+};
+
+let animal: User | Animal = { id: 1, status: '', name: '' };
+
+function sumaDos(n: number | string): number {
+  if (typeof n === 'number') {
+    return n + 2;
+  }
+  return parseInt(n) + 2;
+}
+
+sumaDos('2');
+console.log('suma de 2 + 2', '2' + 2);
+
+// Intersection types: sirve para tener varios tipos y garantizar que el tipo que creemos tenga las propiedades de todos los que lo forman
+
+type Audit = {
+  created_at: string;
+  modified_at: string;
+};
+
+type Product = {
+  name: string;
+};
+
+const product: Audit & Product = {
+  created_at: '',
+  modified_at: '',
+  name: '',
+};
+
+// Literal types: le decimos a la constante que tiene que tener ese valor si o si entre varios
+
+type Fibo = 0 | 1 | 2 | 3 | 5;
+
+const nDeFibo: Fibo = 5;
+
+// Nullable types
+
+const toNumber: (s: string | null | undefined) => number = (s) => {
+  if (!s) {
+    return 0;
+  }
+  return parseInt(s);
+};
+
+const n = toNumber(null);
+
+// optional chain operator
+
+function getUser(id: number) {
+  if (id < 0) {
+    return null;
+  }
+  return {
+    id: 1,
+    name: 'Felipe',
+    created_at: new Date(),
+  };
+}
+
+const user = getUser(1);
+
+console.log('usuario', user?.created_at);
+
+const array1 = null;
+
+console.log(array1?.[0]);
+
+const fn5: any = null;
+
+console.log(fn5?.());
+
+// nullish coalescing operator
+
+const difficulty: number | null = null;
+
+const user2 = {
+  userName: 'fertelo',
+  difficulty: difficulty ?? 1,
+};

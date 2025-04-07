@@ -61,6 +61,49 @@ console.log(accepted);
 const errorUser = () => {
     throw new Error('Error in the user');
 };
-const errored = errorUser();
-console.log(errored);
+let score = 98;
+score = 'hello world';
+let animal = { id: 1, status: '', name: '' };
+function sumaDos(n) {
+    if (typeof n === 'number') {
+        return n + 2;
+    }
+    return parseInt(n) + 2;
+}
+sumaDos('2');
+console.log('suma de 2 + 2', '2' + 2);
+const product = {
+    created_at: '',
+    modified_at: '',
+    name: '',
+};
+const nDeFibo = 5;
+const toNumber = (s) => {
+    if (!s) {
+        return 0;
+    }
+    return parseInt(s);
+};
+const n = toNumber(null);
+function getUser(id) {
+    if (id < 0) {
+        return null;
+    }
+    return {
+        id: 1,
+        name: 'Felipe',
+        created_at: new Date(),
+    };
+}
+const user = getUser(1);
+console.log('usuario', user === null || user === void 0 ? void 0 : user.created_at);
+const array1 = null;
+console.log(array1 === null || array1 === void 0 ? void 0 : array1[0]);
+const fn5 = null;
+console.log(fn5 === null || fn5 === void 0 ? void 0 : fn5());
+const difficulty = null;
+const user2 = {
+    userName: 'fertelo',
+    difficulty: difficulty !== null && difficulty !== void 0 ? difficulty : 1,
+};
 //# sourceMappingURL=index.js.map
