@@ -295,7 +295,7 @@
 
 // //POO
 
-// //**
+//**
 // // Clases: las clases se componen de:
 // // Propiedades (que son variables)
 // // Métodos (que son funciones) */
