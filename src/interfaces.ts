@@ -42,7 +42,7 @@ class Dog implements Animal {
     console.log('Dog walking');
   }
   sound(): void {
-    console.log('Dog barking!!');
+    console.log('Woof!!');
   }
 }
 
