@@ -9,8 +9,8 @@ log<string, number>('dato', 33);
 log<string, string>('dato', 'happy quocka');
 
 // //implicito con tipos inferidos
-// log(1, 2);
-// log('hello world', 'just a cheer');
+log(1, 2);
+log('hello world', 'just a cheer');
 
 const fetchData = async <T>(resource: string): Promise<T> => {
   const response = await fetch(`${resource}`);
@@ -120,7 +120,7 @@ class deleteState<T extends ObjectId> extends State<T> {
 //Pasar genérico con restricciones
 class EstadoUsuarios extends State<User3> {
   resetPass() {
-    //lógica de la funciñon
+    //lógica de la funcion
   }
 }
 //Pasar genérico fijo
@@ -140,8 +140,10 @@ function getProp<T>(object: T, property: keyof T): unknown {
   return object[property];
 }
 
-getProp<Calendar>(calendar, 'id');
-getProp<Calendar>(calendar, 'source');
+const getKey1 = getProp<Calendar>(calendar, 'id');
+const getKey2 = getProp<Calendar>(calendar, 'source');
+console.log('here' + getKey1);
+console.log('here' + getKey2);
 
 //utility types
 

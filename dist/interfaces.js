@@ -29,7 +29,7 @@ class Dog {
         console.log('Dog walking');
     }
     sound() {
-        console.log('Dog barking!!');
+        console.log('Woof!!');
     }
 }
 class Dictionary {

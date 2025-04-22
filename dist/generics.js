@@ -8,6 +8,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+function log(a, b) {
+    console.log(a, b);
+    return b;
+}
+log('dato', 33);
+log('dato', 'happy quocka');
+log(1, 2);
+log('hello world', 'just a cheer');
 const fetchData = (resource) => __awaiter(void 0, void 0, void 0, function* () {
     const response = yield fetch(`${resource}`);
     return response.json();
@@ -74,8 +82,10 @@ const calendar = { id: 1, source: 'Google', owner: 'myself' };
 function getProp(object, property) {
     return object[property];
 }
-getProp(calendar, 'id');
-getProp(calendar, 'source');
+const getKey1 = getProp(calendar, 'id');
+const getKey2 = getProp(calendar, 'source');
+console.log('here' + getKey1);
+console.log('here' + getKey2);
 const keyVal = {
     'soy un string': 42,
 };
