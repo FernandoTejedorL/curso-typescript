@@ -1,12 +1,12 @@
-// function log<T, V>(a: T, b: V): V {
-//   console.log(a, b);
+function log<T, V>(a: T, b: V): V {
+  console.log(a, b);
 
-//   return b;
-// }
+  return b;
+}
 
-// //tipo literal
-// log<string, number>('dato', 33);
-// log<string, string>('dato', 'happy quocka');
+//tipo literal
+log<string, number>('dato', 33);
+log<string, string>('dato', 'happy quocka');
 
 // //implicito con tipos inferidos
 // log(1, 2);
